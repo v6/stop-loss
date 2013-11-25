@@ -1,0 +1,25 @@
+// Need to talk to Paolo, to see if I'm going in the right direction, here. 
+
+//https://btc-e.com/api/documentation
+
+Initialize. 
+
+Self-test. 
+
+Repeat the following : 
+
+Get price of Bitcoin. 
+
+Record price of Bitcoin. 
+
+Get price of Litecoin. 
+
+Record price of Litecoin. 
+
+Etc...
+
+Do algorithm. (Example - Is Bitcoin price going down? Is Bitcoin price going up? Hath the moon doth waxed in fortnight past?) 
+
+Bitcoin to Litecoin OR Litecoin to Bitcoin. 
+
+Log. 

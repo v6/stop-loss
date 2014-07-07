@@ -23,3 +23,6 @@ Do algorithm. (Example - Is Bitcoin price going down? Is Bitcoin price going up?
 Bitcoin to Litecoin OR Litecoin to Bitcoin. 
 
 Log. 
+
+Use something like the following: 
+https://github.com/timolson/cointrader

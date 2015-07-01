@@ -1,6 +1,22 @@
 // Need to talk to Paolo, to see if I'm going in the right direction, here. 
 
+This program will do one thing, and one thing only: Automate trades on bitreserve.org, Kraken, or anywhere else that allows instant trading using the second derivative of historical prices.
+
 //https://btc-e.com/api/documentation
+
+Terms :
+http://www.sec.gov/answers/stopord.htm
+http://www.sec.gov/answers/limit.htm
+http://www.sec.gov/answers/stoplim.htm
+https://btc-e.com/
+https://litecoin.org/
+
+Similar Applications :
+https://play.google.com/store/apps/details?id=com.thanksmister.coinbasetrader
+https://github.com/martindale/coinbase-trader
+http://www.ohloh.net/p/coinbase-trader
+
+Here is what the application does, and how it is done.
 
 Initialize. 
 
@@ -22,6 +38,32 @@ Do algorithm. (Example - Is Bitcoin price going down? Is Bitcoin price going up?
 
 Bitcoin to Litecoin OR Litecoin to Bitcoin. 
 
+The algorithm could be as simple as "Is the price going up?"
+
+Execute trades.
+If the price is going up, trade an amount of Litecoin for Bitcoin.
+If the price is going down, trade an amount of Bitcoin for Litecoin.
+
+This will basically just update coinbase-trader to work with BTC-e's API, and add the ability for a server to make trades.
+
+This is probably obvious, but if one can access the price of bitcoin every 30 seconds,
+micro-trading 1 bitcoin during a volatile period could turn a profit quickly, as follows :
+
+Start : 1BTC, 100 LTC.
+
+-- Price : 1 BTC / 70 LTC
+
+/\ Price : 1 BTC / 71 LTC (Spend 2 LTC for 0.028 BTC.)
+
+/\ Price : 1 BTC / 72 LTC (Spend 2 LTC for 0.028 BTC.)
+
+-- Price : 1 BTC / 72 LTC (Do Nothing.)
+
+/\ Price : 1 BTC / 73 LTC (Spend 2 LTC for 0.027 BTC.)
+
+\/ Price : 1 BTC / 71 LTC (Spend .05 BTC for 3.55 LTC.)
+
+End : 1.034 BTC, 102.45 LTC
 Log. 
 
 Use something like the following: 

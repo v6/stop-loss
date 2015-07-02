@@ -1,28 +1,78 @@
-// Need to talk to Paolo, to see if I'm going in the right direction, here. 
+This program will automate trades on bitreserve.org, Kraken, or anywhere else that allows instant trading in relation to historical prices.
 
-//https://btc-e.com/api/documentation
+Here is an overview of what it does;
 
-Initialize. 
+Repeat the following :
 
-Self-test. 
+Get price of Bitcoin.
+Record price of Bitcoin.
+Get price of Litecoin.
+Record price of Litecoin.
 
-Repeat the following : 
+Do algorithm.
+The algorithm could be as simple as "Is the price going up?"
 
-Get price of Bitcoin. 
+Execute trades.
+If the price is going up, trade an amount of Litecoin for Bitcoin.
+If the price is going down, trade an amount of Bitcoin for Litecoin.
 
-Record price of Bitcoin. 
+This will basically just update coinbase-trader to work with BTC-e's API, and add the ability for a server to make trades automatically.
 
-Get price of Litecoin. 
+EXAMPLE:
+This is probably obvious, but if one can access the price of bitcoin every 30 seconds,
+micro-trading 1 bitcoin during a volatile period could turn a profit quickly, as follows :
 
-Record price of Litecoin. 
+We start with 1 Bitcoin and 100 Litecoin.
 
-Etc...
+Start : 1BTC, 100 LTC.
 
-Do algorithm. (Example - Is Bitcoin price going down? Is Bitcoin price going up? Hath the moon doth waxed in fortnight past?) 
+Current price ratio of Bitcoin to Litecoin is 1 Bitcoin is equal in value to 70 Litecoin. This is what we use as a reference for the next step, and each step will reference the price ratio from the previous step.
 
-Bitcoin to Litecoin OR Litecoin to Bitcoin. 
+-- Price : 1 BTC = 70 LTC
 
-Log. 
+Now refencing the previous ratio we see that Bitcoin are worth more than they used to be in terms of Litecoins.
 
-Use something like the following: 
-https://github.com/timolson/cointrader
+/\ Price : 1 BTC = 71 LTC (Buy 10 LTC for 0.1408 BTC.)
+
+Now Bitcoins are woth even more Litecoins so it is time to sell some more.
+
+/\ Price : 1 BTC = 72 LTC (BUY 10 LTC for 0.1389 BTC.)
+
+Referencing the previous pricing we see that there is no change in value of Bit coin so we take no action.
+
+-- Price : 1 BTC = 72 LTC (Do Nothing.)
+
+Under the premise of buy cheap sell high we see that the Bitcoin are now even higher in value so we sell more of them for Litecoins.
+
+/\ Price : 1 BTC = 73 LTC (Buy 10 LTC for 0.1370 BTC.)
+
+Now comes the fun part, we see that the Bitcoins we sold earlier are becoming more expensive so lets sell them.
+
+\/ Price : 1 BTC = 71 LTC (Buy .20 BTC for 14.2 LTC.)
+
+Bitcoins are even cheaper now, so lets sell more of them.
+
+\/ Price : 1 BTC = 70 LTC (Buy .25 BTC for 17.5 LTC.)
+
+So now we see we end up with more Bitcoin and Litecoin than we started with. As mentioned earlier, if you do this process twice every five minutes you stand to gain quite a sum of money. 
+
+End : 1.033 BTC, 101.7 LTC
+
+(If it helps you picture it, imagine a candy trader. Dollars are like Bitcoins and candies are like Litecoins. There is a man who buys and sells the same candy at a different prices every day. The Candy trader comes along and sees the price of the candy the first day. The next day he comes along the candy is more expesive so he sells his candy at that price because it is worth more. Then the next day the candy is at an all time low price so he buys a bunch. On the final day he sees that the candy has gotten back to its normal price so he sells all this candy he bought at the all time low price, but he sells it when it is at normal price so he earns the difference between that all time low price and the normal price.)
+
+For more information choose from the following rescources.
+
+Terms:
+http://www.sec.gov/answers/stopord.htm
+http://www.sec.gov/answers/limit.htm
+http://www.sec.gov/answers/stoplim.htm
+https://btc-e.com/
+https://litecoin.org/
+
+Similar Applications :
+https://play.google.com/store/apps/details?id=com.thanksmister.coinbasetrader
+https://github.com/martindale/coinbase-trader
+http://www.ohloh.net/p/coinbase-trader
+
+ : Nathan Basanese
+   4086576639

@@ -1,7 +1,6 @@
-If you'd like access to this, just email me at stop-loss-gitters@basanese.com. 
+If you'd like access to this, or have any suggestions or questions just email me at stop-loss-gitters@basanese.com. 
+Also current editor email can be found at shadybear18@gmail.com
 
-It looks like the best way to implement this will be on a basic web server with node.js. However, there's already ruby and java code for working with BTC-E. 
+This program will automate trades on bitreserve.org, Kraken, or anywhere else that allows instant trading in relation to historical prices.
 
-This program will do one thing, and one thing only: Automate trades on BTC-E. 
-
-Thoughts? Send them. 
+It looks like the best way to implement this will be on a basic web server with node.js. 
